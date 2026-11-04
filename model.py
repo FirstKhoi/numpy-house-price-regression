@@ -366,13 +366,10 @@ def house_price_pipeline(
 
     # 8. Return results
     return {
-        "theta": theta,
-        "mean": mean,
-        "std": std,
-        "splits": std_splits,
-        "val_predictions": y_val_pred,
-        "test_predictions": y_test_pred,
-        "val_metrics": val_metrics,
-        "test_metrics": test_metrics
-    }
+    "theta": theta,
+    "y_test": std_splits["y_test"],
+    "y_test_pred": y_test_pred,
+    "test_metrics": test_metrics,
+    "val_metrics": val_metrics
+}
 
