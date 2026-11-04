@@ -153,8 +153,15 @@ def ols_fit(X, y):
 
     return square_linear
 
-# Step 14 - ols_predict (not yet solved)
-# TODO: implement
+# Step 14 - ols_predict
+def ols_predict(X, theta):
+    # TODO: Predict continuous targets with a fitted linear model.
+    X = np.array(X, dtype=float)
+    theta = np.array(theta, dtype=float)
+
+    y_pred = X @ theta
+
+    return y_pred
 
 # Step 15 - mean_absolute_error (not yet solved)
 # TODO: implement
