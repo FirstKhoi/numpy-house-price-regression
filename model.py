@@ -221,8 +221,22 @@ def residual_summary(y_true, y_pred):
         "median_abs": median_abs
     }
 
-# Step 19 - prepare_cleaned_features (not yet solved)
-# TODO: implement
+# Step 19 - prepare_cleaned_features
+import numpy as np
+
+def prepare_cleaned_features(X, iqr_k=1.5):
+    X = np.array(X, dtype=float).copy()
+
+    # Step 1: Impute missing values
+    X = impute_nan_with_mean(X)
+
+    # Step 2: Compute IQR bounds
+    lower, upper = compute_iqr_bounds(X, k=iqr_k)
+
+    # Step 3: Clip outliers
+    X = clip_columns(X, lower, upper)
+
+    return X
 
 # Step 20 - assemble_feature_matrix (not yet solved)
 # TODO: implement
